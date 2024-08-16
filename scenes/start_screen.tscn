@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjqkuvynpwhks"]
+[gd_scene load_steps=3 format=3 uid="uid://cjqkuvynpwhks"]
 
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_kh8pp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t0dkd"]
+font_size = 48
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -51,6 +54,10 @@ grow_vertical = 2
 layout_mode = 2
 text = "Start"
 
+[node name="Settings" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Settings"
+
 [node name="Credits" type="Button" parent="Buttons"]
 layout_mode = 2
 text = "Credits"
@@ -100,7 +107,81 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Close"
 
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 76.0
+offset_top = 74.0
+offset_right = -76.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="VBoxContainer" parent="SettingsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Settings Label" type="Label" parent="SettingsPanel/MarginContainer/VBoxContainer/Title"]
+layout_mode = 2
+text = "Settings
+"
+label_settings = SubResource("LabelSettings_t0dkd")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/MarginContainer/VBoxContainer/Title"]
+layout_mode = 2
+
+[node name="Volume" type="VBoxContainer" parent="SettingsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsPanel/MarginContainer/VBoxContainer/Volume"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Volume" type="HSlider" parent="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+rounded = true
+
+[node name="HSplitContainer" type="HSplitContainer" parent="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer/VBoxContainer/HSplitContainer/HSplitContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="Mute" type="CheckButton" parent="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer/VBoxContainer/HSplitContainer/HSplitContainer"]
+layout_mode = 2
+
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Buttons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="meta_clicked" from="CreditsPanel/CreditsLabel" to="." method="_on_credits_label_meta_clicked"]
 [connection signal="pressed" from="CreditsPanel/CreditsClose" to="." method="_on_credits_close_pressed"]

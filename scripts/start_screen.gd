@@ -22,6 +22,8 @@ func _ready():
 		copyright_text += "-----" + license + "-----\n" + licenses[license] + "\n\n"
 	
 	$CreditsPanel/CreditsLabel.text = copyright_text
+	#Hide settings at start
+	$SettingsPanel.hide()
 
 func _on_start_pressed():
 	pass # Replace with function body.
@@ -36,3 +38,17 @@ func _on_credits_label_meta_clicked(meta):
 
 func _on_credits_close_pressed():
 	$CreditsPanel.hide()
+
+
+# settings panel, maybe this time the volume won't destroy eardrums
+func _on_settings_pressed():
+	#print("Settings Pressed")  #testing button
+	$SettingsPanel.show()
+
+
+func _unhandled_key_input(event_press):   # Esc exits settings and credits, maybe not the best function
+	if event_press is InputEventKey and event_press.pressed:  #if pressed
+		if event_press.keycode == KEY_ESCAPE: 
+			$SettingsPanel.hide()
+			$CreditsPanel.hide()
+			#print("esc pressed")
