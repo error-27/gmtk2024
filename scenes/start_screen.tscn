@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjqkuvynpwhks"]
+[gd_scene load_steps=5 format=3 uid="uid://cjqkuvynpwhks"]
 
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_kh8pp"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="2_vsmyi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t0dkd"]
 font_size = 48
+
+[sub_resource type="AudioStream" id="AudioStream_cn4vv"]
+resource_local_to_scene = true
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -119,6 +123,7 @@ offset_right = -76.0
 offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_vsmyi")
 
 [node name="MarginContainer" type="MarginContainer" parent="SettingsPanel"]
 layout_mode = 1
@@ -168,6 +173,8 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+min_value = -50.0
+max_value = 35.0
 rounded = true
 
 [node name="HSplitContainer" type="HSplitContainer" parent="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer/VBoxContainer/HSplitContainer"]
@@ -180,8 +187,13 @@ text = "Mute"
 [node name="Mute" type="CheckButton" parent="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer/VBoxContainer/HSplitContainer/HSplitContainer"]
 layout_mode = 2
 
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStream_cn4vv")
+
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Buttons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="meta_clicked" from="CreditsPanel/CreditsLabel" to="." method="_on_credits_label_meta_clicked"]
 [connection signal="pressed" from="CreditsPanel/CreditsClose" to="." method="_on_credits_close_pressed"]
+[connection signal="value_changed" from="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer/VBoxContainer/HSplitContainer/Volume" to="SettingsPanel" method="_on_volume_value_changed"]
+[connection signal="toggled" from="SettingsPanel/MarginContainer/VBoxContainer/Volume/MarginContainer/VBoxContainer/HSplitContainer/HSplitContainer/Mute" to="SettingsPanel" method="_on_mute_toggled"]

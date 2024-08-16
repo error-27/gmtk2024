@@ -22,8 +22,11 @@ func _ready():
 		copyright_text += "-----" + license + "-----\n" + licenses[license] + "\n\n"
 	
 	$CreditsPanel/CreditsLabel.text = copyright_text
-	#Hide settings at start
-	$SettingsPanel.hide()
+	
+	#play Background Music (AudioStream)
+	#current song: none
+	#$BackgroundMusic.play()
+
 
 func _on_start_pressed():
 	pass # Replace with function body.
