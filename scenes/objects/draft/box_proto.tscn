@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cygk2ktsrpoat"]
+
+[ext_resource type="Script" path="res://scripts/objects/box_proto.gd" id="1_lxxxv"]
+[ext_resource type="Texture2D" uid="uid://cus0ykq2n54wo" path="res://assets/sprites/test/box-proto.png" id="2_bc0x6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6tsp"]
+size = Vector2(31, 31)
+
+[node name="box-proto" type="CharacterBody2D"]
+script = ExtResource("1_lxxxv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bc0x6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k6tsp")
