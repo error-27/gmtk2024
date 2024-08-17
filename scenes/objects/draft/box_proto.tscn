@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://brdyh5ph4o3w5" path="res://assets/sprites/test/box2.png" id="2_hr3r4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6tsp"]
-size = Vector2(15, 15)
+size = Vector2(14, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnfya"]
-size = Vector2(0.5, 12)
+size = Vector2(1, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw76j"]
-size = Vector2(12, 0.5)
+size = Vector2(12, 1)
 
 [node name="box-proto" type="CharacterBody2D"]
 script = ExtResource("1_lxxxv")

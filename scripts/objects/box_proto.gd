@@ -5,7 +5,7 @@ var is_push = 0
 var x_direction = 0 
 var y_direction = 0
 
-#var boxtimer = 0
+var boxtimer = 0
 
 
 
@@ -19,15 +19,15 @@ func _physics_process(delta: float) -> void:
 
 
 # debug printing
-#	boxtimer += 1
-#	if boxtimer >= (320):
-#		print("-------------------------")
-#		print("x: %s" % velocity.x)
-#		print("y: %s" % velocity.y)
-#		print("is push: %s" % is_push)
-#		print("velocity: %s" % velocity)
-#		print("x direction: %s" % x_direction)
-#		boxtimer -= 320
+	boxtimer += 1
+	if boxtimer >= (320):
+		print("-------------------------")
+		print("x: %s" % velocity.x)
+		print("y: %s" % velocity.y)
+		print("is push: %s" % is_push)
+		print("velocity: %s" % velocity)
+		print("x direction: %s" % x_direction)
+		boxtimer -= 320
 
 
 
