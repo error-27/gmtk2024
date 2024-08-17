@@ -5,6 +5,9 @@ extends CharacterBody2D
 
 var is_small := false
 
+@onready var collider := $CollisionShape2D
+@onready var sprite := $Sprite2D
+
 func _ready() -> void:
 	pass
 
@@ -15,3 +18,13 @@ func _process(delta: float) -> void:
 	velocity = Vector2(h_move, v_move) * (small_speed if is_small else big_speed)
 	
 	move_and_slide()
+
+func ensmallify() -> void:
+	is_small = true
+	collider.shape.size = Vector2i(4, 4)
+	sprite.region_enabled = true
+
+func enbiggify() -> void:
+	is_small = false
+	collider.shape.size = Vector2i(16, 16)
+	sprite.region_enabled = false
