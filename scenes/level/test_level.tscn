@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgpn85gltkwum"]
+[gd_scene load_steps=3 format=3 uid="uid://bgpn85gltkwum"]
 
 [ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="1_0a4hy"]
+[ext_resource type="PackedScene" uid="uid://cygk2ktsrpoat" path="res://scenes/objects/draft/box_proto.tscn" id="2_urdnu"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -12,3 +13,6 @@
 collision_enabled = false
 
 [node name="Player" parent="." instance=ExtResource("1_0a4hy")]
+
+[node name="box-proto" parent="." instance=ExtResource("2_urdnu")]
+position = Vector2(32, 32)
