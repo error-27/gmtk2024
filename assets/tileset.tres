@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://bgpn85gltkwum"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cphfuyjc342e"]
 
-[ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="1_0a4hy"]
-[ext_resource type="Texture2D" uid="uid://b7xm80fjk7bx6" path="res://assets/sprites/tiles/colored_packed.png" id="1_cnlhu"]
-[ext_resource type="PackedScene" uid="uid://cygk2ktsrpoat" path="res://scenes/objects/draft/box_proto.tscn" id="2_urdnu"]
+[ext_resource type="Texture2D" uid="uid://b7xm80fjk7bx6" path="res://assets/sprites/tiles/colored_packed.png" id="1_kq3oa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqwic"]
-texture = ExtResource("1_cnlhu")
+texture = ExtResource("1_kq3oa")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1085,21 +1083,5 @@ texture = ExtResource("1_cnlhu")
 47:21/0 = 0
 48:21/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_y6q6b"]
+[resource]
 sources/0 = SubResource("TileSetAtlasSource_hqwic")
-
-[node name="TestLevel" type="Node2D"]
-
-[node name="Tiles" type="Node2D" parent="."]
-
-[node name="Walls" type="TileMapLayer" parent="Tiles"]
-tile_map_data = PackedByteArray("AAAEAAAAAAATAAIAAAAFAAAAAAATAAIAAAAGAAAAAAATAAIAAAAHAAAAAAATAAIAAAAIAAAAAAATAAIAAAAJAAAAAAATAAIAAAAKAAAAAAATAAIAAAALAAAAAAATAAIAAAAMAAAAAAATAAIAAAANAAAAAAATAAIAAAAOAAAAAAATAAIAAAA=")
-tile_set = SubResource("TileSet_y6q6b")
-
-[node name="Floors" type="TileMapLayer" parent="Tiles"]
-collision_enabled = false
-
-[node name="Player" parent="." instance=ExtResource("1_0a4hy")]
-
-[node name="box-proto" parent="." instance=ExtResource("2_urdnu")]
-position = Vector2(32, 32)
