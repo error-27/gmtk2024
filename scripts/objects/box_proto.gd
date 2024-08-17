@@ -1,9 +1,13 @@
 extends CharacterBody2D
 class_name Box
 
+
+
 var is_pushed = 0
 var x_direction = 0
 var y_direction = 0 
+
+
 
 func _box_physics(delta: float) -> void:
 	# what I'm trying to do: is_pushed == 1 when it is pushed
