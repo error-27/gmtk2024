@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgpn85gltkwum"]
+
+[ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="1_0a4hy"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Walls" type="TileMapLayer" parent="Tiles"]
+
+[node name="Floors" type="TileMapLayer" parent="Tiles"]
+collision_enabled = false
+
+[node name="Player" parent="." instance=ExtResource("1_0a4hy")]
