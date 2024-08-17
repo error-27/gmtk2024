@@ -17,6 +17,13 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://gmtk2024-logo.png"
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=192
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
 [input]
 
 move_left={
