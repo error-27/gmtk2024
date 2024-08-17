@@ -17,5 +17,4 @@ script = ExtResource("1_n8q68")
 shape = SubResource("RectangleShape2D_gf7f5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_mrlii")
