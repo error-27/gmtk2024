@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://bgpn85gltkwum"]
+[gd_scene load_steps=5 format=4 uid="uid://bgpn85gltkwum"]
 
 [ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="1_0a4hy"]
 [ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="1_3oi52"]
 [ext_resource type="PackedScene" uid="uid://cygk2ktsrpoat" path="res://scenes/objects/draft/box_proto.tscn" id="2_urdnu"]
+[ext_resource type="PackedScene" uid="uid://5qgwtx5hnmaj" path="res://scenes/objects/gridbox.tscn" id="4_fo1a2"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -19,3 +20,6 @@ collision_enabled = false
 
 [node name="box-proto" parent="." instance=ExtResource("2_urdnu")]
 position = Vector2(32, 32)
+
+[node name="gridbox" parent="." instance=ExtResource("4_fo1a2")]
+position = Vector2(64, 64)
