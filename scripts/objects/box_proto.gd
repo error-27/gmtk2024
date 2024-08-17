@@ -5,20 +5,32 @@ var is_push = 0
 var x_direction = 0 
 var y_direction = 0
 
+#var boxtimer = 0
 
-func _ready() -> void:
-	velocity.x = 0
-	velocity.y = 0
+
 
 func _physics_process(delta: float) -> void:
-	#velocity.x = 0
-	#velocity.y = 0
+	#Basic idea
+	#(is being pushed (0/1) * (time) * (direction to move) * (value)
 	velocity.x = is_push*delta*x_direction*16
 	velocity.y = is_push*delta*y_direction*16 
 
 	move_and_slide()
-	#print("x: %s" % velocity.x)
-	#print("y: %s" % velocity.y)
+
+
+# debug printing
+#	boxtimer += 1
+#	if boxtimer >= (320):
+#		print("-------------------------")
+#		print("x: %s" % velocity.x)
+#		print("y: %s" % velocity.y)
+#		print("is push: %s" % is_push)
+#		print("velocity: %s" % velocity)
+#		print("x direction: %s" % x_direction)
+#		boxtimer -= 320
+
+
+
 
 
 
