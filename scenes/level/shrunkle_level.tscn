@@ -25,7 +25,7 @@ tile_set = ExtResource("1_ose0j")
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="box-proto" parent="Objects" instance=ExtResource("4_m5skg")]
-position = Vector2(87, 119)
+position = Vector2(-29, -13)
 
 [node name="Player" parent="." instance=ExtResource("2_5q164")]
 

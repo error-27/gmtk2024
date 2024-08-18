@@ -34,6 +34,14 @@ func embiggen_level() -> void:
 			var scn = load(data.get_custom_data("Big Path")).instantiate()
 			add_child(scn)
 			scn.position = smallify_pos + Vector2(t.x * 16 * 8, t.y * 16 * 8)
+	
+	for o in objects.get_children():
+		var scn
+		if o is Box:
+			scn = load("res://scenes/big_tiles/objects/box.tscn").instantiate()
+		
+		add_child(scn)
+		scn.position = smallify_pos + (o.position * 8)
 
 func ensmallen_level() -> void:
 	floor_map.enabled = false
