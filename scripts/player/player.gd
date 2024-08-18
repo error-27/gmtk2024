@@ -1,14 +1,18 @@
 extends CharacterBody2D
+class_name Player
 
 @export var big_speed: int = 20
 @export var small_speed: int = 5
 
-@export var floor_map: TileMapLayer
+var floor_map: TileMapLayer
 
 var is_small := false
 
 @onready var collider := $CollisionShape2D
 @onready var sprite := $Sprite2D
+
+signal shrunk
+signal grew
 
 func _ready() -> void:
 	pass
