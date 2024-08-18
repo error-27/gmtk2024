@@ -843,7 +843,9 @@ texture = ExtResource("1_kq3oa")
 44:16/0 = 0
 45:16/0 = 0
 46:16/0 = 0
+46:16/0/custom_data_1 = true
 47:16/0 = 0
+47:16/0/custom_data_0 = true
 48:16/0 = 0
 0:17/0 = 0
 1:17/0 = 0
@@ -1093,4 +1095,8 @@ texture = ExtResource("1_kq3oa")
 
 [resource]
 physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "Shrunklify"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "Unshrunkle"
+custom_data_layer_1/type = 1
 sources/0 = SubResource("TileSetAtlasSource_hqwic")
