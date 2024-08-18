@@ -6,7 +6,8 @@ var x_direction = 0
 var y_direction = 0
 @export var x_mult = 1
 @export var y_mult = 512
-
+var x_vol = 0
+var y_vol = 0
 #var boxtimer = 0
 
 
@@ -19,6 +20,11 @@ func _physics_process(delta: float) -> void:
 
 	velocity.y = (is_push)*(delta*y_direction*y_mult)
 	velocity.x = (is_push)*(delta*x_direction*x_mult)
+	x_vol = (is_push)*(delta*x_direction*x_mult)
+	y_vol = (is_push)*(delta*y_direction*y_mult)
+	if y_vol != 0:
+		x_vol = 0
+	velocity = Vector2((x_vol), (y_vol))
 
 	move_and_slide()
 
