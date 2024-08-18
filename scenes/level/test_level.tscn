@@ -19,3 +19,4 @@ collision_enabled = false
 
 [node name="box" parent="." instance=ExtResource("4_tjoga")]
 position = Vector2(64, 64)
+x_mult = -512
