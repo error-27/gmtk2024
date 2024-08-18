@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://csodanqj1dkbn"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_n8q68"]
-[ext_resource type="Texture2D" uid="uid://6b0v26bdipky" path="res://assets/sprites/tiles/colored-transparent_packed.png" id="2_76r41"]
+[ext_resource type="Texture2D" uid="uid://b8kije7xr74j8" path="res://assets/sprites/character/big/robot-map.png" id="2_msnff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gf7f5"]
 size = Vector2(16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mrlii"]
-atlas = ExtResource("2_76r41")
-region = Rect2(287.702, 128.107, 16.2157, 16.4859)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mli45"]
+atlas = ExtResource("2_msnff")
+region = Rect2(0, 0, 16, 16)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_n8q68")
@@ -17,4 +17,4 @@ script = ExtResource("1_n8q68")
 shape = SubResource("RectangleShape2D_gf7f5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_mrlii")
+texture = SubResource("AtlasTexture_mli45")

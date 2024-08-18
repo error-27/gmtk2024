@@ -46,6 +46,9 @@ func _physics_process(delta: float) -> void:
 #		print("y direction: %s" % y_direction)
 #		boxtimer -= 120
 
+
+
+
 func _on_right_area_body_entered(_body: Node2D) -> void:
 	x_direction = 1
 	is_push = 1
@@ -65,6 +68,7 @@ func _on_left_area_body_exited(_body: Node2D) -> void:
 func _on_top_area_body_entered(_body: Node2D) -> void:
 	y_direction = 1
 	is_push = 1
+
 
 
 func _on_top_area_body_exited(_body: Node2D) -> void:

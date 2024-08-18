@@ -14,4 +14,5 @@ func _process(_delta: float) -> void:
 	
 	velocity = Vector2(h_move, v_move) * (small_speed if is_small else big_speed)
 	
+	
 	move_and_slide()
