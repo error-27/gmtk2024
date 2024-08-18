@@ -1,17 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6smo12nqupkr"]
+[gd_scene load_steps=5 format=4 uid="uid://b6smo12nqupkr"]
 
 [ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="1_ose0j"]
 [ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="2_5q164"]
 [ext_resource type="PackedScene" uid="uid://rg8y4fj0ixwy" path="res://scenes/level_overlord.tscn" id="2_338ih"]
+[ext_resource type="PackedScene" uid="uid://cygk2ktsrpoat" path="res://scenes/objects/draft/box_proto.tscn" id="4_m5skg"]
 
 [node name="ShrunkleLevel" type="Node2D"]
 
-[node name="Floor" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 8, 0, 3, 0, 0, 0, 47, 0, 16, 0, 0, 0, 12, 0, 3, 0, 0, 0, 46, 0, 16, 0, 0, 0)
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAIAAIAAAATAAIAAAAJAAIAAAATAAIAAAAKAAIAAAATAAIAAAALAAIAAAATAAIAAAAMAAIAAAATAAIAAAAJAAMAAAATAAEAAAAKAAMAAAATAAEAAAALAAMAAAATAAEAAAAIAAYAAAASAAAAAAAJAAYAAAASAAAAAAAKAAYAAAASAAAAAAALAAYAAAASAAAAAAAMAAYAAAASAAAAAAAJAAkAAAASAAAAAAA=")
 tile_set = ExtResource("1_ose0j")
 
-[node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "player") instance=ExtResource("2_338ih")]
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAIAAMAAAAvABAAAAAMAAMAAAAuABAAAAA=")
+tile_set = ExtResource("1_ose0j")
+
+[node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "wall_map", "objects", "player", "camera") instance=ExtResource("2_338ih")]
 floor_map = NodePath("../Floor")
+wall_map = NodePath("../Walls")
+objects = NodePath("../Objects")
 player = NodePath("../Player")
+camera = NodePath("../Camera2D")
 
 [node name="Player" parent="." instance=ExtResource("2_5q164")]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="box-proto" parent="Objects" instance=ExtResource("4_m5skg")]
+position = Vector2(87, 119)
+
+[node name="Camera2D" type="Camera2D" parent="."]
