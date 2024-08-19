@@ -1,7 +1,7 @@
 extends CharacterBody2D
-class_name Box
+class_name Button_Box
 
-signal button_box_press
+signal button_press
 
 var is_push = 0
 var x_direction = 0 
@@ -11,7 +11,7 @@ var y_mult = 512
 var x_vol = 0
 var y_vol = 0
 #var boxtimer = 0
-@onready var tilemaplayer : TileMapLayer = $TileMapLayer
+#@onready var tilemaplayer : TileMapLayer = $TileMapLayer
 
 
 
@@ -34,7 +34,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_button_press_area_entered(area: Area2D) -> void:
 	if area.name == "Button_Area":
-		button_box_press.emit()
+		button_press.emit()
+		#print("button press")
 		#tilemaplayer.set_cell(Vector2i(3,3), 0, Vector2i(27,15), 0)
 	pass # Replace with function body.
 

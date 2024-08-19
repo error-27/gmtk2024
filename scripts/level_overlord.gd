@@ -11,7 +11,7 @@ func _ready() -> void:
 	player.shrunk.connect(embiggen_level)
 	player.grew.connect(ensmallen_level)
 	player.level_change.connect(level_change)
-	
+
 
 func _process(_delta: float) -> void:
 	camera.position = player.position
@@ -77,7 +77,7 @@ func level_change() -> void:
 	print("object pos: %s" % objects.position)
 	#pass
 
-func button_box_press() -> void:
-	
-	print("box booped button")
-	pass
+# not currently functional code
+#func button_box_press() -> void:
+#	print("box booped button")
+#	pass
