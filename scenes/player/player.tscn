@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gf7f5"]
 size = Vector2(16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mrlii"]
-atlas = ExtResource("2_76r41")
-region = Rect2(288, 128, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mli45"]
+atlas = ExtResource("2_msnff")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8x27"]
 size = Vector2(14, 14)
@@ -22,7 +22,7 @@ small_speed = 50
 shape = SubResource("RectangleShape2D_gf7f5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_mrlii")
+texture = SubResource("AtlasTexture_mli45")
 region_rect = Rect2(8, 8, 4, 4)
 
 [node name="TriggerCollide" type="Area2D" parent="."]
