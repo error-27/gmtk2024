@@ -36,14 +36,10 @@ func _process(_delta: float) -> void:
 
 func ensmallify() -> void:
 	is_small = true
-	collider.shape.size = Vector2i(4, 4)
-	sprite.region_enabled = true
 	shrunk.emit()
 
 func enbiggify() -> void:
 	is_small = false
-	collider.shape.size = Vector2i(16, 16)
-	sprite.region_enabled = false
 	grew.emit()
 
 
