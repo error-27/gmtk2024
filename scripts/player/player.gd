@@ -45,3 +45,8 @@ func enbiggify() -> void:
 	collider.shape.size = Vector2i(16, 16)
 	sprite.region_enabled = false
 	grew.emit()
+
+
+func _on_trigger_collide_area_entered(area: Area2D) -> void:
+	if area.name == "GrowTrigger":
+		enbiggify()
