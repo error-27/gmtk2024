@@ -1,48 +1,20 @@
-extends CharacterBody2D
+extends Area2D
 class_name GridBox
 
-var is_push = 0
-var x_direction = 0 
-var y_direction = 0
+var tile_size = 16
 
+var inputs = {"move_right": Vector2(),
+"move_left": Vector2.LEFT,
+"move_up": Vector2.UP,
+"move_down": Vector2.DOWN}
 
+func _ready():
+	position = position.snapped(Vector2.ONE * tile_size)
+	position += Vector2.ONE * tile_size/2
 
-
-func _on_right_area_body_entered(_body: Node2D) -> void:
-	is_push = 1
-	x_direction = 1
-
-
-func _on_right_area_body_exited(_body: Node2D) -> void:
-	is_push = 0
-	x_direction = 0
-
-
-func _on_left_area_body_entered(_body: Node2D) -> void:
-	is_push = 1
-	x_direction = -1
-
-
-func _on_left_area_body_exited(_body: Node2D) -> void:
-	is_push = 0
-	x_direction = 0
-
-
-func _on_top_area_body_entered(_body: Node2D) -> void:
-	is_push = 1
-	y_direction = 1
-
-
-func _on_top_area_body_exited(_body: Node2D) -> void:
-	is_push = 0
-	y_direction = 0
-
-
-func _on_bottom_area_body_entered(_body: Node2D) -> void:
-	is_push = 1
-	y_direction = -1
-
-
-func _on_bottom_area_body_exited(_body: Node2D) -> void:
-	is_push = 0
-	y_direction = 0
+func _unhandled_input(event):
+	for dir in inputs.keys():
+		if event.is_action_pressed(dir):
+			move(dir)
+func move(dir):
+	position += inputs[dir] * tile_size

@@ -1,89 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf1h0l5v4jjtk"]
+[gd_scene load_steps=4 format=3 uid="uid://bf1h0l5v4jjtk"]
 
+[ext_resource type="Texture2D" uid="uid://blkcm875ymyku" path="res://assets/sprites/object/box1.png" id="1_io70t"]
 [ext_resource type="Script" path="res://scripts/objects/gridbox.gd" id="1_qr1qf"]
-[ext_resource type="Texture2D" uid="uid://brdyh5ph4o3w5" path="res://assets/sprites/test/box2.png" id="2_1va1l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6tsp"]
-size = Vector2(14, 14)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kntry"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnfya"]
-size = Vector2(1, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw76j"]
-size = Vector2(12, 1)
-
-[sub_resource type="GDScript" id="GDScript_v0yid"]
-script/source = "extends Area2D
-
-var tile_size = 16
-var inputs = {\"right\": Vector2.RIGHT,
-			\"left\": Vector2.LEFT,
-			\"up\": Vector2.UP,
-			\"down\": Vector2.DOWN}
-
-func _ready():
-	position = position.snapped(Vector2.ONE * tile_size)
-	position += Vector2.ONE * tile_size/2
-
-func _unhandled_input(event):
-	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
-			move(dir)
-
-func move(dir):
-	position += inputs[dir] * tile_size
-	
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bk5n"]
-size = Vector2(320, 192)
-
-[node name="gridbox" type="CharacterBody2D"]
+[node name="Gridbox" type="Area2D"]
 script = ExtResource("1_qr1qf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1va1l")
+texture = ExtResource("1_io70t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_k6tsp")
+shape = SubResource("RectangleShape2D_kntry")
 
-[node name="right_area" type="Area2D" parent="."]
-
-[node name="right_box_shape" type="CollisionShape2D" parent="right_area"]
-position = Vector2(7.8, 0)
-shape = SubResource("RectangleShape2D_fnfya")
-
-[node name="left_area" type="Area2D" parent="."]
-
-[node name="left_box_shape" type="CollisionShape2D" parent="left_area"]
-position = Vector2(-7.8, 0)
-shape = SubResource("RectangleShape2D_fnfya")
-
-[node name="top_area" type="Area2D" parent="."]
-
-[node name="top_box_shape" type="CollisionShape2D" parent="top_area"]
-position = Vector2(0, -7.8)
-shape = SubResource("RectangleShape2D_dw76j")
-
-[node name="bottom area" type="Area2D" parent="."]
-
-[node name="bottom_box_shape" type="CollisionShape2D" parent="bottom area"]
-position = Vector2(0, 7.8)
-shape = SubResource("RectangleShape2D_dw76j")
-
-[node name="Area2D" type="Area2D" parent="."]
-script = SubResource("GDScript_v0yid")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(160, 96)
-shape = SubResource("RectangleShape2D_2bk5n")
-
-[connection signal="body_entered" from="right_area" to="." method="_on_right_area_body_entered"]
-[connection signal="body_exited" from="right_area" to="." method="_on_right_area_body_exited"]
-[connection signal="body_entered" from="left_area" to="." method="_on_left_area_body_entered"]
-[connection signal="body_exited" from="left_area" to="." method="_on_left_area_body_exited"]
-[connection signal="body_entered" from="top_area" to="." method="_on_top_area_body_entered"]
-[connection signal="body_exited" from="top_area" to="." method="_on_top_area_body_exited"]
-[connection signal="body_entered" from="bottom area" to="." method="_on_bottom_area_body_entered"]
-[connection signal="body_exited" from="bottom area" to="." method="_on_bottom_area_body_exited"]
+[node name="RayCast2D" type="RayCast2D" parent="."]
