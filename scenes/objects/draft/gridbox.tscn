@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cygk2ktsrpoat"]
+[gd_scene load_steps=8 format=3 uid="uid://5qgwtx5hnmaj"]
 
-[ext_resource type="Script" path="res://scripts/objects/box_proto.gd" id="1_lxxxv"]
-[ext_resource type="Texture2D" uid="uid://brdyh5ph4o3w5" path="res://assets/sprites/test/box2.png" id="2_hr3r4"]
+[ext_resource type="Script" path="res://scripts/objects/gridbox.gd" id="1_qr1qf"]
+[ext_resource type="Texture2D" uid="uid://brdyh5ph4o3w5" path="res://assets/sprites/test/box2.png" id="2_1va1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6tsp"]
 size = Vector2(14, 14)
@@ -12,11 +12,37 @@ size = Vector2(1, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw76j"]
 size = Vector2(12, 1)
 
-[node name="box-proto" type="CharacterBody2D"]
-script = ExtResource("1_lxxxv")
+[sub_resource type="GDScript" id="GDScript_v0yid"]
+script/source = "extends Area2D
+
+var tile_size = 16
+var inputs = {\"right\": Vector2.RIGHT,
+			\"left\": Vector2.LEFT,
+			\"up\": Vector2.UP,
+			\"down\": Vector2.DOWN}
+
+func _ready():
+	position = position.snapped(Vector2.ONE * tile_size)
+	position += Vector2.ONE * tile_size/2
+
+func _unhandled_input(event):
+	for dir in inputs.keys():
+		if event.is_action_pressed(dir):
+			move(dir)
+
+func move(dir):
+	position += inputs[dir] * tile_size
+	
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bk5n"]
+size = Vector2(320, 192)
+
+[node name="gridbox" type="CharacterBody2D"]
+script = ExtResource("1_qr1qf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_hr3r4")
+texture = ExtResource("2_1va1l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_k6tsp")
@@ -44,6 +70,14 @@ shape = SubResource("RectangleShape2D_dw76j")
 [node name="bottom_box_shape" type="CollisionShape2D" parent="bottom area"]
 position = Vector2(0, 7.8)
 shape = SubResource("RectangleShape2D_dw76j")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_v0yid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(160, 96)
+shape = SubResource("RectangleShape2D_2bk5n")
 
 [connection signal="body_entered" from="right_area" to="." method="_on_right_area_body_entered"]
 [connection signal="body_exited" from="right_area" to="." method="_on_right_area_body_exited"]

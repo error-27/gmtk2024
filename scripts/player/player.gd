@@ -17,7 +17,7 @@ signal grew
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var h_move := int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	var v_move := int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
 	
