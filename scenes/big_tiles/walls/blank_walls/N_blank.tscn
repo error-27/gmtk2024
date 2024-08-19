@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=4 uid="uid://b845ay0qkyy0k"]
+
+[ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="1_ip81w"]
+
+[node name="NorthBlankWall" type="Node2D"]
+
+[node name="small wall" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAARABAAAAABAAAAAAARABAAAAACAAAAAAARABAAAAADAAAAAAARABAAAAAEAAAAAAARABAAAAAFAAAAAAARABAAAAAGAAAAAAARABAAAAAHAAAAAAARABAAAAA=")
+tile_set = ExtResource("1_ip81w")
