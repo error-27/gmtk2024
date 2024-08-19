@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=4 uid="uid://c8eujob8h5p8g"]
+
+[ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="1_fovre"]
+[ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="2_1o45r"]
+[ext_resource type="PackedScene" uid="uid://g2aoh43uawyd" path="res://scenes/objects/box.tscn" id="3_yn72h"]
+[ext_resource type="PackedScene" uid="uid://ccw2g71bqe1we" path="res://scenes/objects/h_box.tscn" id="4_l0a7i"]
+[ext_resource type="PackedScene" uid="uid://u4odywkjtbgo" path="res://scenes/objects/v_box.tscn" id="5_koxqt"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Walls" type="TileMapLayer" parent="Tiles"]
+tile_map_data = PackedByteArray("AAAEAAAAAAATAAIAAAAFAAAAAAATAAIAAAAGAAAAAAATAAIAAAAHAAAAAAATAAIAAAAIAAAAAAATAAIAAAAJAAAAAAATAAIAAAAKAAAAAAATAAIAAAALAAAAAAATAAIAAAAMAAAAAAATAAIAAAANAAAAAAATAAIAAAAOAAAAAAATAAIAAAA=")
+tile_set = ExtResource("1_fovre")
+
+[node name="Floors" type="TileMapLayer" parent="Tiles"]
+collision_enabled = false
+
+[node name="Player" parent="." instance=ExtResource("2_1o45r")]
+
+[node name="box" parent="." instance=ExtResource("3_yn72h")]
+position = Vector2(64, 64)
+
+[node name="Hbox" parent="." instance=ExtResource("4_l0a7i")]
+position = Vector2(64, 128)
+
+[node name="Vbox" parent="." instance=ExtResource("5_koxqt")]
+position = Vector2(128, 112)
