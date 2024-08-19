@@ -10,6 +10,7 @@ func _ready() -> void:
 	player.floor_map = floor_map
 	player.shrunk.connect(embiggen_level)
 	player.grew.connect(ensmallen_level)
+	player.level_change.connect(level_change)
 
 func _process(_delta: float) -> void:
 	camera.position = player.position
@@ -51,3 +52,26 @@ func ensmallen_level() -> void:
 	floor_map.enabled = true
 	wall_map.enabled = true
 	objects.show()
+
+func level_change() -> void:
+	for child in get_children():  # hide everything 
+		child.queue_free()        # basically ensmallen without the smol
+	objects.hide()
+	#floor_map.enabled = false
+	#wall_map.enabled = false
+	floor_map.hide()
+	wall_map.hide()
+	#player.position = player.position / 8 # change position back
+	player.position = Vector2(0, 0)
+	load("res://scenes/big_tiles/special_tiles/room_test_inside.tscn").instantiate()
+	load("res://scenes/player/player.tscn").instantiate()
+	player.position = Vector2(0, 0)
+	objects.show()
+	#floor_map.enabled = true
+	#wall_map.enabled = true
+	floor_map.show()
+	wall_map.show()
+	print("level changed")
+	print("player pos: %s" % player.position)
+	print("object pos: %s" % objects.position)
+	#pass

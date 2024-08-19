@@ -12,6 +12,7 @@ var is_small := false
 var looking = 0
 signal shrunk
 signal grew
+signal level_change
 
 func _ready() -> void:
 	var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -80,6 +81,4 @@ func _on_trigger_collide_area_entered(area: Area2D) -> void:
 # to manually put in the data and level, but whatever
 func _on_mini_level_contact_area_entered(area: Area2D) -> void:
 	if area.name == "LevelMiniTest":
-		var scn
-		scn = load("res://scenes/big_tiles/special_tiles/room_test_inside.tscn").instantiate()
-		add_child(scn)
+		level_change.emit()
