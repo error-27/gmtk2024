@@ -31,7 +31,7 @@ func _ready():
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://scenes/level/test_level.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_world.tscn")
 
 func _on_credits_pressed():
 	$CreditsPanel.show()

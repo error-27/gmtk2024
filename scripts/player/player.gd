@@ -3,6 +3,7 @@ class_name Player
 
 @export var big_speed: int = 20
 @export var small_speed: int = 5
+@export var level_hop: bool = false # if to hop into mini levels, in case they don't get done, we can toggle it
 
 var floor_map: TileMapLayer
 
@@ -80,5 +81,5 @@ func _on_trigger_collide_area_entered(area: Area2D) -> void:
 # I feel like there are better ways of doing this that don't require me
 # to manually put in the data and level, but whatever
 func _on_mini_level_contact_area_entered(area: Area2D) -> void:
-	if area.name == "LevelMiniTest":
+	if area.name == "LevelMiniTest" and level_hop == true:
 		level_change.emit()

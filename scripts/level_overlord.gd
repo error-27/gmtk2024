@@ -58,23 +58,16 @@ func level_change() -> void:
 	for child in get_children():  # hide everything 
 		child.queue_free()        # basically ensmallen without the smol
 	objects.hide()
-	#floor_map.enabled = false
-	#wall_map.enabled = false
+	var scn
+	scn = load("res://scenes/player/player.tscn").instantiate()
 	floor_map.hide()
 	wall_map.hide()
 	#player.position = player.position / 8 # change position back
 	player.position = Vector2(0, 0)
-	load("res://scenes/big_tiles/special_tiles/room_test_inside.tscn").instantiate()
-	load("res://scenes/player/player.tscn").instantiate()
-	player.position = Vector2(0, 0)
-	objects.show()
-	#floor_map.enabled = true
-	#wall_map.enabled = true
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/level_world.tscn")# change level!
+	add_child(scn)
 	floor_map.show()
 	wall_map.show()
-	print("level changed")
-	print("player pos: %s" % player.position)
-	print("object pos: %s" % objects.position)
 	#pass
 
 # not currently functional code
