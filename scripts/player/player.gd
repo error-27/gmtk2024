@@ -8,11 +8,8 @@ var floor_map: TileMapLayer
 
 var is_small := false
 
-#@export var test_smol = false
-
 @onready var collider := $CollisionShape2D
 var looking = 0
-
 signal shrunk
 signal grew
 
@@ -57,22 +54,20 @@ func _process(_delta: float) -> void:
 		if Input.is_action_pressed("move_right"):
 			$AnimatedSprite2D.set_frame(2)
 			looking = 2
-			
-#	if test_smol == true:
-#		ensmallify()
-#	if test_smol == false:
-#		enbiggify()
+		
 		
 	move_and_slide()
 
 func ensmallify() -> void:
 	is_small = true
 	$AnimatedSprite2D.set_frame(looking + 4)
+	$CollisionShape2D.shape.set_size(Vector2(6,6)) #change collsion size to match sprite
 	shrunk.emit()
 
 func enbiggify() -> void:
 	is_small = false
 	$AnimatedSprite2D.set_frame(looking)
+	$CollisionShape2D.shape.set_size(Vector2(13,13)) #change collsion size to match sprite
 	grew.emit()
 
 
