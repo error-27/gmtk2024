@@ -8,9 +8,10 @@ var floor_map: TileMapLayer
 
 var is_small := false
 
+#@export var test_smol = false
+
 @onready var collider := $CollisionShape2D
-#@onready var sprite := $Sprite2D
-#@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite
+var looking = 0
 
 signal shrunk
 signal grew
@@ -34,23 +35,44 @@ func _process(_delta: float) -> void:
 			elif celldata.get_custom_data("Unshrunkle"):
 				enbiggify()
 	# sprite changes  with movement
-	if Input.is_action_pressed("move_down") and is_small == false: # moving down while big
-		$AnimatedSprite2D.set_frame(0)
-	if Input.is_action_pressed("move_up") and is_small == false:
-		$AnimatedSprite2D.set_frame(3)
-	if Input.is_action_pressed("move_left") and is_small == false: # moving down while big
-		$AnimatedSprite2D.set_frame(1)
-	if Input.is_action_pressed("move_right") and is_small == false:
-		$AnimatedSprite2D.set_frame(2)
-	
+	if is_small == true:
+		if Input.is_action_pressed("move_down"):
+			$AnimatedSprite2D.set_frame(4)
+		if Input.is_action_pressed("move_up"):
+			$AnimatedSprite2D.set_frame(7)
+		if Input.is_action_pressed("move_left"):
+			$AnimatedSprite2D.set_frame(5)
+		if Input.is_action_pressed("move_right"):
+			$AnimatedSprite2D.set_frame(6)
+	else:
+		if Input.is_action_pressed("move_down"): # moving down while big
+			$AnimatedSprite2D.set_frame(0)
+			looking = 0
+		if Input.is_action_pressed("move_up"):
+			$AnimatedSprite2D.set_frame(3)
+			looking = 3
+		if Input.is_action_pressed("move_left"):
+			$AnimatedSprite2D.set_frame(1)
+			looking = 1
+		if Input.is_action_pressed("move_right"):
+			$AnimatedSprite2D.set_frame(2)
+			looking = 2
+			
+#	if test_smol == true:
+#		ensmallify()
+#	if test_smol == false:
+#		enbiggify()
+		
 	move_and_slide()
 
 func ensmallify() -> void:
 	is_small = true
+	$AnimatedSprite2D.set_frame(looking + 4)
 	shrunk.emit()
 
 func enbiggify() -> void:
 	is_small = false
+	$AnimatedSprite2D.set_frame(looking)
 	grew.emit()
 
 
