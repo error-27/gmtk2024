@@ -22,7 +22,6 @@ func _process(_delta: float) -> void:
 	var v_move := int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
 	
 	velocity = Vector2(h_move, v_move) * (small_speed if is_small else big_speed)
-	
 	if velocity == Vector2():
 		var cellpos: Vector2i = floor_map.local_to_map(position)
 		var celldata: TileData = floor_map.get_cell_tile_data(cellpos)
@@ -74,3 +73,13 @@ func enbiggify() -> void:
 func _on_trigger_collide_area_entered(area: Area2D) -> void:
 	if area.name == "GrowTrigger":
 		enbiggify()
+
+
+#if contacting the area2D of a mini level, enter it
+# I feel like there are better ways of doing this that don't require me
+# to manually put in the data and level, but whatever
+func _on_mini_level_contact_area_entered(area: Area2D) -> void:
+	if area.name == "LevelMiniTest":
+		var scn
+		scn = load("res://scenes/big_tiles/special_tiles/room_test_inside.tscn").instantiate()
+		add_child(scn)

@@ -68,4 +68,10 @@ sprite_frames = SubResource("SpriteFrames_c6mw7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerCollide"]
 shape = SubResource("RectangleShape2D_v8x27")
 
+[node name="MiniLevelContact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniLevelContact"]
+shape = SubResource("RectangleShape2D_v8x27")
+
 [connection signal="area_entered" from="TriggerCollide" to="." method="_on_trigger_collide_area_entered"]
+[connection signal="area_entered" from="MiniLevelContact" to="." method="_on_mini_level_contact_area_entered"]
