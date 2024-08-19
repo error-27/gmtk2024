@@ -9,12 +9,14 @@ var floor_map: TileMapLayer
 var is_small := false
 
 @onready var collider := $CollisionShape2D
-@onready var sprite := $Sprite2D
+#@onready var sprite := $Sprite2D
+#@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite
 
 signal shrunk
 signal grew
 
 func _ready() -> void:
+	var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 	pass
 
 func _process(_delta: float) -> void:
@@ -31,6 +33,15 @@ func _process(_delta: float) -> void:
 				ensmallify()
 			elif celldata.get_custom_data("Unshrunkle"):
 				enbiggify()
+	# sprite changes  with movement
+	if Input.is_action_pressed("move_down") and is_small == false: # moving down while big
+		$AnimatedSprite2D.set_frame(0)
+	if Input.is_action_pressed("move_up") and is_small == false:
+		$AnimatedSprite2D.set_frame(3)
+	if Input.is_action_pressed("move_left") and is_small == false: # moving down while big
+		$AnimatedSprite2D.set_frame(1)
+	if Input.is_action_pressed("move_right") and is_small == false:
+		$AnimatedSprite2D.set_frame(2)
 	
 	move_and_slide()
 

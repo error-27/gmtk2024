@@ -11,7 +11,7 @@ func _ready() -> void:
 	player.shrunk.connect(embiggen_level)
 	player.grew.connect(ensmallen_level)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	camera.position = player.position
 
 func embiggen_level() -> void:
