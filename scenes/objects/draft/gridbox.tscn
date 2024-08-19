@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://5qgwtx5hnmaj"]
+[gd_scene load_steps=8 format=3 uid="uid://bf1h0l5v4jjtk"]
 
 [ext_resource type="Script" path="res://scripts/objects/gridbox.gd" id="1_qr1qf"]
 [ext_resource type="Texture2D" uid="uid://brdyh5ph4o3w5" path="res://assets/sprites/test/box2.png" id="2_1va1l"]
