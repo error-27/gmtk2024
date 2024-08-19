@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://rg8y4fj0ixwy"]
+
+[ext_resource type="Script" path="res://scripts/level_overlord.gd" id="1_vbieo"]
+
+[node name="LevelOverlord" type="Node2D"]
+script = ExtResource("1_vbieo")
+
+[node name="Marker2D" type="Marker2D" parent="."]

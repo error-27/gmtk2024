@@ -1,9 +1,18 @@
 extends CharacterBody2D
+class_name Player
 
 @export var big_speed: int = 20
 @export var small_speed: int = 5
 
+var floor_map: TileMapLayer
+
 var is_small := false
+
+@onready var collider := $CollisionShape2D
+@onready var sprite := $Sprite2D
+
+signal shrunk
+signal grew
 
 func _ready() -> void:
 	pass
@@ -14,5 +23,30 @@ func _process(_delta: float) -> void:
 	
 	velocity = Vector2(h_move, v_move) * (small_speed if is_small else big_speed)
 	
+	if velocity == Vector2():
+		var cellpos: Vector2i = floor_map.local_to_map(position)
+		var celldata: TileData = floor_map.get_cell_tile_data(cellpos)
+		if floor_map.enabled and celldata != null:
+			if celldata.get_custom_data("Shrunklify"):
+				ensmallify()
+			elif celldata.get_custom_data("Unshrunkle"):
+				enbiggify()
 	
 	move_and_slide()
+
+func ensmallify() -> void:
+	is_small = true
+	collider.shape.size = Vector2i(4, 4)
+	sprite.region_enabled = true
+	shrunk.emit()
+
+func enbiggify() -> void:
+	is_small = false
+	collider.shape.size = Vector2i(16, 16)
+	sprite.region_enabled = false
+	grew.emit()
+
+
+func _on_trigger_collide_area_entered(area: Area2D) -> void:
+	if area.name == "GrowTrigger":
+		enbiggify()
