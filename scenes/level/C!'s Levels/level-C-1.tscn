@@ -7,18 +7,11 @@
 
 [node name="Level-C-1" type="Node2D"]
 
-[node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "wall_map", "objects", "player", "camera") instance=ExtResource("1_vvmh8")]
-floor_map = NodePath("Floor")
-wall_map = NodePath("Walls")
-objects = NodePath("../Objects")
-player = NodePath("../Player")
-camera = NodePath("../Camera2D")
-
-[node name="Floor" type="TileMapLayer" parent="LevelOverlord"]
+[node name="Floor" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD8//7/AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wAAAAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAjAAwAAAA=")
 tile_set = ExtResource("2_fysei")
 
-[node name="Walls" type="TileMapLayer" parent="LevelOverlord"]
+[node name="Walls" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD8////AAASABEAAAD8/wAAAAASABEAAAD8/wEAAAASABEAAAD8/wIAAAAwAA0AAAAEAP7/AAAwAA0AAAADAP7/AAARABIAAAACAP7/AAARABIAAAABAP7/AAARABIAAAAAAP7/AAARABIAAAD///7/AAARABIAAAD+//7/AAARABIAAAD9//7/AAARABIAAAD8//7/AAAwAA0AAAAEAAIAAAAwAA0AAAADAAIAAAARABAAAAACAAIAAAARABAAAAABAAIAAAARABAAAAAAAAIAAAARABAAAAD//wIAAAARABAAAAD+/wIAAAARABAAAAD9/wIAAAARABAAAAAEAP//AAAQABEAAAAEAAAAAAAQABEAAAAEAAEAAAAQABEAAAA=")
 tile_set = ExtResource("2_fysei")
 
@@ -33,3 +26,10 @@ position = Vector2(-39, 7)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-39, 6)
+
+[node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "wall_map", "objects", "player", "camera") instance=ExtResource("1_vvmh8")]
+floor_map = NodePath("../Floor")
+wall_map = NodePath("../Walls")
+objects = NodePath("../Objects")
+player = NodePath("../Player")
+camera = NodePath("../Camera2D")
