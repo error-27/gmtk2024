@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://cmlosxpqfl5vl"]
+[gd_scene load_steps=7 format=4 uid="uid://cmlosxpqfl5vl"]
 
 [ext_resource type="PackedScene" uid="uid://rg8y4fj0ixwy" path="res://scenes/level_overlord.tscn" id="1_ldkdc"]
 [ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="2_d6j84"]
 [ext_resource type="PackedScene" uid="uid://cft6khk54ixcs" path="res://scenes/objects/button_box.tscn" id="3_52uxc"]
 [ext_resource type="PackedScene" uid="uid://b513ifagmgg27" path="res://scenes/objects/door.tscn" id="4_bnjcw"]
 [ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="4_f0hjn"]
+[ext_resource type="PackedScene" uid="uid://cb61ggkcb2o4b" path="res://scenes/objects/horizontal_channel_box.tscn" id="5_aej36"]
 
 [node name="BoxButtonDoor" type="Node2D"]
 
@@ -31,6 +32,8 @@ position = Vector2(24, 24)
 position = Vector2(56, -8)
 button_coord = Vector2i(1, -1)
 seamless = true
+
+[node name="horizontal_channel_box" parent="Objects" instance=ExtResource("5_aej36")]
 
 [node name="Player" parent="." instance=ExtResource("4_f0hjn")]
 position = Vector2(-8, 24)

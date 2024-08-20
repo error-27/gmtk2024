@@ -1,0 +1,2 @@
+extends Button_Box
+class_name H_Channel_Box

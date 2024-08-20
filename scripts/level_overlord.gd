@@ -46,7 +46,12 @@ func embiggen_level() -> void:
 	for o in objects.get_children():
 		var scn
 		if o is Button_Box:
-			scn = load("res://scenes/big_tiles/objects/box.tscn").instantiate()
+			if o is H_Channel_Box:
+				scn = load("res://scenes/big_tiles/objects/box_channel_h.tscn").instantiate()
+			elif o is V_Channel_Box:
+				scn = load("res://scenes/big_tiles/objects/box_channel_v.tscn").instantiate()
+			else:
+				scn = load("res://scenes/big_tiles/objects/box.tscn").instantiate()
 		if o is Door:
 			if o.seamless:
 				scn = load("res://scenes/big_tiles/objects/Door.tscn").instantiate()
