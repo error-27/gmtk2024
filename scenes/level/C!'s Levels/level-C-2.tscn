@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://rg8y4fj0ixwy" path="res://scenes/level_overlord.tscn" id="1_kwpvx"]
 [ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="2_eb33k"]
 [ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="3_h87n1"]
-[ext_resource type="PackedScene" uid="uid://bm7ynvvhsvxak" path="res://scenes/objects/door.tscn" id="3_mhf7i"]
+[ext_resource type="PackedScene" uid="uid://b513ifagmgg27" path="res://scenes/objects/door.tscn" id="3_mhf7i"]
 [ext_resource type="PackedScene" uid="uid://cft6khk54ixcs" path="res://scenes/objects/button_box.tscn" id="4_fddbh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhvj5"]

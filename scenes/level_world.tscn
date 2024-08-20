@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://dhhxuxhne8ign"]
+[gd_scene load_steps=8 format=4 uid="uid://dhhxuxhne8ign"]
 
 [ext_resource type="PackedScene" uid="uid://c0rn6gfxegv3t" path="res://scenes/player/world_player.tscn" id="1_1ikvu"]
 [ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="1_4keaa"]
@@ -7,6 +7,15 @@
 size = Vector2(14, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2j1f"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcek1"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1ley"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjals"]
 size = Vector2(14, 14)
 
 [node name="LevelWorld" type="Node2D"]
@@ -49,7 +58,30 @@ shape = SubResource("RectangleShape2D_rreyq")
 position = Vector2(168, 24)
 shape = SubResource("RectangleShape2D_h2j1f")
 
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="Level1" type="Area2D" parent="Levels"]
+
+[node name="1sq" type="CollisionShape2D" parent="Levels/Level1"]
+position = Vector2(56, 40)
+shape = SubResource("RectangleShape2D_gcek1")
+
+[node name="Level2" type="Area2D" parent="Levels"]
+
+[node name="2sq" type="CollisionShape2D" parent="Levels/Level2"]
+position = Vector2(88, 40)
+shape = SubResource("RectangleShape2D_j1ley")
+
+[node name="Level3" type="Area2D" parent="Levels"]
+
+[node name="3sq" type="CollisionShape2D" parent="Levels/Level3"]
+position = Vector2(120, 40)
+shape = SubResource("RectangleShape2D_fjals")
+
 [connection signal="hidden" from="Debug" to="WorldPlayer" method="_on_debug_hidden"]
 [connection signal="area_entered" from="Debug/DebugLevel1" to="WorldPlayer" method="_on_debug_level_1_area_entered"]
 [connection signal="area_entered" from="Debug/DebugLevel2" to="WorldPlayer" method="_on_debug_level_2_area_entered"]
 [connection signal="area_entered" from="Home/HomeLevel" to="WorldPlayer" method="_on_home_level_area_entered"]
+[connection signal="area_entered" from="Levels/Level1" to="WorldPlayer" method="_on_level_1_area_entered"]
+[connection signal="area_entered" from="Levels/Level2" to="WorldPlayer" method="_on_level_2_area_entered"]
+[connection signal="area_entered" from="Levels/Level3" to="WorldPlayer" method="_on_level_3_area_entered"]
