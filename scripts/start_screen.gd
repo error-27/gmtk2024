@@ -11,6 +11,8 @@ func _ready():
 	
 	copyright_text += "Made using the [url=https://godotengine.org/license]Godot Game Engine[/url]\n"
 	
+	copyright_text += "Using [url=https://kenney.nl/assets/1-bit-pack]1-bit Pack[/url] by Kenney (CC0)\n"
+	
 	var copyright_info = Engine.get_copyright_info()
 	copyright_text += "\n-----THIRD-PARTY COMPONENTS-----\n"
 	for part in copyright_info:
