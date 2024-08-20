@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=4 uid="uid://cmlosxpqfl5vl"]
+
+[ext_resource type="PackedScene" uid="uid://rg8y4fj0ixwy" path="res://scenes/level_overlord.tscn" id="1_ldkdc"]
+[ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="2_d6j84"]
+[ext_resource type="PackedScene" uid="uid://cft6khk54ixcs" path="res://scenes/objects/button_box.tscn" id="3_52uxc"]
+[ext_resource type="PackedScene" uid="uid://b513ifagmgg27" path="res://scenes/objects/door.tscn" id="4_bnjcw"]
+[ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="4_f0hjn"]
+
+[node name="BoxButtonDoor" type="Node2D"]
+
+[node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "wall_map", "objects", "player", "camera") instance=ExtResource("1_ldkdc")]
+floor_map = NodePath("../Floor")
+wall_map = NodePath("../Walls")
+objects = NodePath("../Objects")
+player = NodePath("../Player")
+camera = NodePath("../Camera2D")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAP//AAAuAAIAAAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD8////AAAAAAAAAAD8//7/AAAAAAAAAAD8//3/AAAAAAAAAAD9//3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wAAAAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAAEAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAADAAQAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAD//wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAA=")
+tile_set = ExtResource("2_d6j84")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_d6j84")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="button_box" parent="Objects" instance=ExtResource("3_52uxc")]
+position = Vector2(24, 24)
+
+[node name="Door" parent="Objects" instance=ExtResource("4_bnjcw")]
+position = Vector2(56, -8)
+button_coord = Vector2i(1, -1)
+
+[node name="Player" parent="." instance=ExtResource("4_f0hjn")]
+position = Vector2(-8, 24)
+
+[node name="Camera2D" type="Camera2D" parent="."]

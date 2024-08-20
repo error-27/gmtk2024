@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Button_Box
 
-signal button_press
+signal button_press(coord: Vector2i)
 
 var is_push = 0
 var x_direction = 0 
@@ -31,13 +31,17 @@ func _physics_process(delta: float) -> void:
 	velocity = Vector2((x_vol), (y_vol))
 
 	move_and_slide()
+	
+	var floor: TileMapLayer = get_node("../../LevelOverlord").floor_map
+	if floor.get_cell_atlas_coords(floor.local_to_map(position)) == Vector2i(46, 2):
+		button_press.emit(floor.local_to_map(position))
 
 func _on_button_press_area_entered(area: Area2D) -> void:
 	if area.name == "Button_Area":
-		button_press.emit()
+		#button_press.emit()
 		#print("button press")
 		#tilemaplayer.set_cell(Vector2i(3,3), 0, Vector2i(27,15), 0)
-	pass # Replace with function body.
+		pass # Replace with function body.
 
 
 
