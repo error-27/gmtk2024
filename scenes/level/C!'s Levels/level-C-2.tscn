@@ -43,9 +43,6 @@ button_coord = Vector2i(1, 1)
 [node name="button_box" parent="Objects" instance=ExtResource("4_fddbh")]
 position = Vector2(-38, -31)
 
-[node name="Player" parent="." instance=ExtResource("3_h87n1")]
-position = Vector2(-39, 7)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-39, 6)
 
@@ -58,3 +55,6 @@ wall_map = NodePath("../Walls")
 objects = NodePath("../Objects")
 player = NodePath("../Player")
 camera = NodePath("../Camera2D")
+
+[node name="Player" parent="." instance=ExtResource("3_h87n1")]
+position = Vector2(-39, 7)

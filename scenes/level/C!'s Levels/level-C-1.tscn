@@ -21,15 +21,15 @@ position = Vector2(48, 0)
 [node name="Objects" type="Node2D" parent="."]
 position = Vector2(62, 23)
 
-[node name="Player" parent="." instance=ExtResource("4_3vui5")]
-position = Vector2(-39, 7)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-39, 6)
-
 [node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "wall_map", "objects", "player", "camera") instance=ExtResource("1_vvmh8")]
 floor_map = NodePath("../Floor")
 wall_map = NodePath("../Walls")
 objects = NodePath("../Objects")
 player = NodePath("../Player")
 camera = NodePath("../Camera2D")
+
+[node name="Player" parent="." instance=ExtResource("4_3vui5")]
+position = Vector2(-39, 7)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-39, 6)
