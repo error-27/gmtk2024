@@ -60,10 +60,16 @@ shape = SubResource("RectangleShape2D_h2j1f")
 
 [node name="Levels" type="Node2D" parent="."]
 
+[node name="Level0" type="Area2D" parent="Levels"]
+
+[node name="0sq" type="CollisionShape2D" parent="Levels/Level0"]
+position = Vector2(56, 40)
+shape = SubResource("RectangleShape2D_gcek1")
+
 [node name="Level1" type="Area2D" parent="Levels"]
 
 [node name="1sq" type="CollisionShape2D" parent="Levels/Level1"]
-position = Vector2(56, 40)
+position = Vector2(24, 40)
 shape = SubResource("RectangleShape2D_gcek1")
 
 [node name="Level2" type="Area2D" parent="Levels"]
@@ -82,6 +88,7 @@ shape = SubResource("RectangleShape2D_fjals")
 [connection signal="area_entered" from="Debug/DebugLevel1" to="WorldPlayer" method="_on_debug_level_1_area_entered"]
 [connection signal="area_entered" from="Debug/DebugLevel2" to="WorldPlayer" method="_on_debug_level_2_area_entered"]
 [connection signal="area_entered" from="Home/HomeLevel" to="WorldPlayer" method="_on_home_level_area_entered"]
+[connection signal="area_entered" from="Levels/Level0" to="WorldPlayer" method="_on_level_0_area_entered"]
 [connection signal="area_entered" from="Levels/Level1" to="WorldPlayer" method="_on_level_1_area_entered"]
 [connection signal="area_entered" from="Levels/Level2" to="WorldPlayer" method="_on_level_2_area_entered"]
 [connection signal="area_entered" from="Levels/Level3" to="WorldPlayer" method="_on_level_3_area_entered"]
