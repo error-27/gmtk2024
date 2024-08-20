@@ -144,9 +144,9 @@ func _on_level_7_area_entered(_area: Area2D) -> void:
 	get_tree().call_deferred("change_scene_to_file","res://scenes/level/error_levels/e9.tscn")
 
 
-func _on_level_8_area_entered(area: Area2D) -> void:
+func _on_level_8_area_entered(_area: Area2D) -> void:
 	get_tree().call_deferred("change_scene_to_file","res://scenes/level/C!'s Levels/level-C-6.tscn")
 
 
-func _on_level_9_area_entered(area: Area2D) -> void:
+func _on_level_9_area_entered(_area: Area2D) -> void:
 	get_tree().call_deferred("change_scene_to_file","res://scenes/level/C!'s Levels/level-C-7.tscn")
