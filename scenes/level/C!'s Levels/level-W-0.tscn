@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=4 uid="uid://bawi1m545dt2a"]
+
+[ext_resource type="PackedScene" uid="uid://rg8y4fj0ixwy" path="res://scenes/level_overlord.tscn" id="1_rwg18"]
+[ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="2_hf8q0"]
+[ext_resource type="PackedScene" uid="uid://da4afoc7hsjjf" path="res://scenes/level/finish_point.tscn" id="3_1dl44"]
+[ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="4_olmoi"]
+
+[node name="Level-W-0" type="Node2D"]
+
+[node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "wall_map", "objects", "player", "camera") instance=ExtResource("1_rwg18")]
+floor_map = NodePath("Floor")
+wall_map = NodePath("Walls")
+objects = NodePath("../Objects")
+player = NodePath("../Player")
+camera = NodePath("../Camera2D")
+
+[node name="Floor" type="TileMapLayer" parent="LevelOverlord"]
+tile_map_data = PackedByteArray("AAD8//7/AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wAAAAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAjAAwAAAA=")
+tile_set = ExtResource("2_hf8q0")
+
+[node name="Walls" type="TileMapLayer" parent="LevelOverlord"]
+tile_map_data = PackedByteArray("AAD8////AAASABEAAAD8/wAAAAASABEAAAD8/wEAAAASABEAAAD8/wIAAAAwAA0AAAAEAP7/AAAwAA0AAAADAP7/AAARABIAAAACAP7/AAARABIAAAABAP7/AAARABIAAAAAAP7/AAARABIAAAD///7/AAARABIAAAD+//7/AAARABIAAAD9//7/AAARABIAAAD8//7/AAAwAA0AAAAEAAIAAAAwAA0AAAADAAIAAAARABAAAAACAAIAAAARABAAAAABAAIAAAARABAAAAAAAAIAAAARABAAAAD//wIAAAARABAAAAD+/wIAAAARABAAAAD9/wIAAAARABAAAAAEAP//AAAQABEAAAAEAAAAAAAQABEAAAAEAAEAAAAQABEAAAA=")
+tile_set = ExtResource("2_hf8q0")
+
+[node name="FinishPoint" parent="." instance=ExtResource("3_1dl44")]
+position = Vector2(48, 0)
+
+[node name="Objects" type="Node2D" parent="."]
+position = Vector2(62, 23)
+
+[node name="Player" parent="." instance=ExtResource("4_olmoi")]
+position = Vector2(-39, 7)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-39, 6)
