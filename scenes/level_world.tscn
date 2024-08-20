@@ -63,13 +63,13 @@ shape = SubResource("RectangleShape2D_h2j1f")
 [node name="Level0" type="Area2D" parent="Levels"]
 
 [node name="0sq" type="CollisionShape2D" parent="Levels/Level0"]
-position = Vector2(56, 40)
+position = Vector2(24, 40)
 shape = SubResource("RectangleShape2D_gcek1")
 
 [node name="Level1" type="Area2D" parent="Levels"]
 
 [node name="1sq" type="CollisionShape2D" parent="Levels/Level1"]
-position = Vector2(24, 40)
+position = Vector2(56, 40)
 shape = SubResource("RectangleShape2D_gcek1")
 
 [node name="Level2" type="Area2D" parent="Levels"]
