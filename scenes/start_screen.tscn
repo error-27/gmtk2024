@@ -70,17 +70,17 @@ scale = Vector2(1.25, 1.25)
 
 [node name="Start" type="Button" parent="Buttons"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 12
 text = "Start"
 
 [node name="Settings" type="Button" parent="Buttons"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 12
 text = "Settings"
 
 [node name="Credits" type="Button" parent="Buttons"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 12
 text = "Credits"
 
 [node name="CreditsPanel" type="Panel" parent="."]
