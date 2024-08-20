@@ -23,9 +23,6 @@ tile_set = ExtResource("2_63d34")
 tile_map_data = PackedByteArray("AAD8////AAASABEAAAD8/wAAAAASABEAAAD8/wEAAAASABEAAAD8//7/AAASABEAAAD8/wIAAAASABEAAAAGAP7/AAAQABEAAAAGAP//AAAQABEAAAAGAAAAAAAQABEAAAAGAAIAAAAQABEAAAD9//3/AAARABIAAAD+//3/AAARABIAAAD///3/AAARABIAAAAAAP3/AAARABIAAAABAP3/AAARABIAAAACAP3/AAARABIAAAADAP3/AAARABIAAAAEAP3/AAARABIAAAAFAP3/AAARABIAAAD9/wMAAAARABAAAAD+/wMAAAARABAAAAD//wMAAAARABAAAAAAAAMAAAARABAAAAABAAMAAAARABAAAAACAAMAAAARABAAAAADAAMAAAARABAAAAAEAAMAAAARABAAAAAFAAMAAAARABAAAAD8/wMAAAAwAA0AAAAGAAMAAAAwAA0AAAD8//3/AAAwAA0AAAAGAP3/AAAwAA0AAAAGAAEAAAAQABEAAAA=")
 tile_set = ExtResource("2_63d34")
 
-[node name="FinishPoint" parent="." instance=ExtResource("3_fneju")]
-position = Vector2(80, 0)
-
 [node name="Objects" type="Node2D" parent="."]
 position = Vector2(48, 24)
 
@@ -43,6 +40,9 @@ position = Vector2(8, 0)
 
 [node name="Door5" parent="Objects" instance=ExtResource("4_yrnnr")]
 position = Vector2(8, 16)
+
+[node name="FinishPoint" parent="Objects" instance=ExtResource("3_fneju")]
+position = Vector2(32, -24)
 
 [node name="Player" parent="." instance=ExtResource("4_77lsh")]
 position = Vector2(-39, 7)

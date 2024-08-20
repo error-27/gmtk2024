@@ -18,3 +18,7 @@ func open_door(coord: Vector2i) -> void:
 		$CollisionShape2D.disabled = true
 		door_tile.hide()
 		seamless = false
+
+
+func _on_visibility_changed() -> void:
+	$CollisionShape2D.disabled = not visible
