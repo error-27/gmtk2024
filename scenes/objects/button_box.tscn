@@ -53,6 +53,7 @@ shape = SubResource("RectangleShape2D_dw76j")
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k6tsp")
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="body_entered" from="right_area" to="." method="_on_right_area_body_entered"]
 [connection signal="body_exited" from="right_area" to="." method="_on_right_area_body_exited"]
 [connection signal="body_entered" from="left_area" to="." method="_on_left_area_body_entered"]

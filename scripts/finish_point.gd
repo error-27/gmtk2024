@@ -7,7 +7,4 @@ func _on_finish_area_entered(_area: Area2D) -> void:
 
 
 func _on_visibility_changed() -> void:
-	if visible:
-		$finish/CollisionShape2D.disabled = false
-	else:
-		$finish/CollisionShape2D.disabled = true
+	$finish/CollisionShape2D.disabled = not visible

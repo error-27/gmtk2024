@@ -18,3 +18,5 @@ shape = SubResource("RectangleShape2D_kvcqs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_t4vlh")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
