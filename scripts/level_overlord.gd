@@ -22,6 +22,7 @@ func embiggen_level() -> void:
 	floor_map.enabled = false
 	wall_map.enabled = false
 	objects.hide()
+	objects.set_process(false)
 	player.position = player.position * 8
 	
 	for t in floor_map.get_used_cells():
@@ -69,6 +70,7 @@ func ensmallen_level() -> void:
 	floor_map.enabled = true
 	wall_map.enabled = true
 	objects.show()
+	objects.set_process(true)
 
 func level_change() -> void:
 	for child in get_children():  # hide everything 

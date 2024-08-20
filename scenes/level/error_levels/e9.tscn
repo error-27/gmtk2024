@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=4 uid="uid://dwoyv2ct7h2gv"]
+
+[ext_resource type="PackedScene" uid="uid://rg8y4fj0ixwy" path="res://scenes/level_overlord.tscn" id="1_xxo4x"]
+[ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="2_ce47n"]
+[ext_resource type="PackedScene" uid="uid://b513ifagmgg27" path="res://scenes/objects/door.tscn" id="3_aikps"]
+[ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="3_cjrql"]
+[ext_resource type="PackedScene" uid="uid://cft6khk54ixcs" path="res://scenes/objects/button_box.tscn" id="4_vhgou"]
+[ext_resource type="PackedScene" uid="uid://da4afoc7hsjjf" path="res://scenes/level/finish_point.tscn" id="5_8rnuh"]
+
+[node name="Level-blank" type="Node2D"]
+
+[node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "wall_map", "objects", "player", "camera") instance=ExtResource("1_xxo4x")]
+floor_map = NodePath("../Floor")
+wall_map = NodePath("../Walls")
+objects = NodePath("../Objects")
+player = NodePath("../Player")
+camera = NodePath("../Camera2D")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAIAAAAvABAAAAAIAAAAAAAuAAIAAAAFAAEAAAAuABAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAABAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAABAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAABAAAAAAD/////AAAAAAAAAAD//wAAAAAuAAIAAAAHAAIAAAABAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAAAAAAAAAAAAAAJAP//AAAAAAAAAAAJAP7/AAAAAAAAAAAIAP7/AAABAAAAAAAHAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAA=")
+tile_set = ExtResource("2_ce47n")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAEAP//AAAQABEAAAAEAP7/AAAQABEAAAAEAAEAAAAQABEAAAAEAP3/AAAQABAAAAAEAAMAAAAQABIAAAAEAAIAAAAQABEAAAAFAAMAAAARABIAAAAHAAMAAAARABIAAAAKAAMAAAASABIAAAAIAAMAAAARABIAAAAJAAMAAAARABIAAAAKAAIAAAASABEAAAAKAAEAAAASABEAAAAKAAAAAAASABEAAAAKAP//AAASABEAAAAKAP7/AAASABEAAAAKAP3/AAASABAAAAAFAP3/AAARABAAAAAGAP3/AAARABAAAAAHAP3/AAARABAAAAAIAP3/AAARABAAAAAJAP3/AAARABAAAAAFAAQAAAASABEAAAAHAAQAAAAQABEAAAAFAAUAAAASABEAAAAGAAYAAAARABAAAAAHAAUAAAAQABEAAAACAAEAAAASABEAAAACAAIAAAASABEAAAACAP7/AAASABEAAAACAP//AAASABEAAAD+//3/AAARABAAAAD///3/AAARABAAAAAAAP3/AAARABAAAAABAP3/AAARABAAAAD9//7/AAAQABEAAAD9////AAAQABEAAAD9/wAAAAAQABEAAAD9/wEAAAAQABEAAAD9/wIAAAAQABEAAAD+/wMAAAARABIAAAD//wMAAAARABIAAAAAAAMAAAARABIAAAABAAMAAAARABIAAAACAAMAAAASABIAAAD9/wMAAAAQABIAAAACAP3/AAASABAAAAD9//3/AAAQABAAAAADAAEAAAARABAAAAADAP//AAARABIAAAA=")
+tile_set = ExtResource("2_ce47n")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Door" parent="Objects" instance=ExtResource("3_aikps")]
+position = Vector2(56, 8)
+button_coord = Vector2i(8, 0)
+
+[node name="Door2" parent="Objects" instance=ExtResource("3_aikps")]
+position = Vector2(104, 72)
+seamless = true
+
+[node name="button_box" parent="Objects" instance=ExtResource("4_vhgou")]
+position = Vector2(104, 8)
+
+[node name="FinishPoint" parent="Objects" instance=ExtResource("5_8rnuh")]
+position = Vector2(96, 80)
+
+[node name="Player" parent="." instance=ExtResource("3_cjrql")]
+position = Vector2(-8, 40)
+
+[node name="Camera2D" type="Camera2D" parent="."]
