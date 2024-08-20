@@ -128,3 +128,17 @@ func _on_level_3_area_entered(_area: Area2D) -> void:
 
 func _on_level_0_area_entered(_area: Area2D) -> void:
 	get_tree().call_deferred("change_scene_to_file","res://scenes/level/Weasel_levels/level-W-0.tscn")
+
+
+func _on_level_4_area_entered(_area: Area2D) -> void:
+	get_tree().call_deferred("change_scene_to_file","res://scenes/level/C!'s Levels/level-C-4.tscn")
+
+
+func _on_level_5_area_entered(_area: Area2D) -> void: # shift because time
+	get_tree().call_deferred("change_scene_to_file","res://scenes/level/Weasel_levels/level-W-6.tscn")
+
+func _on_level_6_area_entered(_area: Area2D) -> void:
+	get_tree().call_deferred("change_scene_to_file","res://scenes/level/error_levels/e8.tscn")
+
+func _on_level_7_area_entered(_area: Area2D) -> void:
+	get_tree().call_deferred("change_scene_to_file","res://scenes/level/error_levels/e9.tscn")
