@@ -172,6 +172,7 @@ texture = ExtResource("1_kq3oa")
 44:2/0 = 0
 45:2/0 = 0
 46:2/0 = 0
+46:2/0/custom_data_2 = "res://scenes/big_tiles/special_tiles/button/button_tile.tscn"
 47:2/0 = 0
 48:2/0 = 0
 0:3/0 = 0

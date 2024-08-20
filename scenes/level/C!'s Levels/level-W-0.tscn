@@ -32,4 +32,4 @@ position = Vector2(-39, 7)
 position = Vector2(-39, 6)
 
 [node name="FinishPoint" parent="." instance=ExtResource("3_1dl44")]
-position = Vector2(701, -240)
+position = Vector2(704, -240)
