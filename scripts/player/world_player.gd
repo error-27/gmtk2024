@@ -90,8 +90,8 @@ func _process(_delta: float) -> void:
 # get_tree().call_deferred("change_scene_to_file","scene path")
 
 # it's jank but it works, manual though
-func _on_level_1_area_entered(area: Area2D) -> void:
+func _on_level_1_area_entered(_area: Area2D) -> void:
 	get_tree().call_deferred("change_scene_to_file","res://scenes/level/shrunkle_level.tscn")
 
-func _on_level_2_area_entered(area: Area2D) -> void:
+func _on_level_2_area_entered(_area: Area2D) -> void:
 	get_tree().call_deferred("change_scene_to_file","res://scenes/level/testing/level-(test).tscn")
