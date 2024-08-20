@@ -47,6 +47,9 @@ func embiggen_level() -> void:
 		var scn
 		if o is Button_Box:
 			scn = load("res://scenes/big_tiles/objects/box.tscn").instantiate()
+		if o is Door:
+			if o.seamless:
+				scn = load("res://scenes/big_tiles/objects/Door.tscn").instantiate()
 		
 		add_child(scn)
 		scn.position = o.position * 8
