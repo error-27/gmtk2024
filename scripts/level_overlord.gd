@@ -56,8 +56,9 @@ func embiggen_level() -> void:
 			if o.seamless:
 				scn = load("res://scenes/big_tiles/objects/Door.tscn").instantiate()
 		
-		add_child(scn)
-		scn.position = o.position * 8
+		if not scn == null:
+			add_child(scn)
+			scn.position = o.position * 8
 
 func ensmallen_level() -> void:
 	for child in get_children():
