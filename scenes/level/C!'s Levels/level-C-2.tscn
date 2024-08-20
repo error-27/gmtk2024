@@ -31,23 +31,23 @@ position = Vector2(62, 23)
 
 [node name="Door2" parent="Objects" instance=ExtResource("3_mhf7i")]
 position = Vector2(10, 17)
-button_coord = Vector2i(1, -1)
+button_coord = Vector2i(1, 1)
 
 [node name="Door4" parent="Objects" instance=ExtResource("3_mhf7i")]
 position = Vector2(10, 1)
-button_coord = Vector2i(1, -1)
+button_coord = Vector2i(1, 1)
 
 [node name="Door5" parent="Objects" instance=ExtResource("3_mhf7i")]
 position = Vector2(10, -15)
-button_coord = Vector2i(1, -1)
+button_coord = Vector2i(1, 1)
 
 [node name="Door3" parent="Objects" instance=ExtResource("3_mhf7i")]
 position = Vector2(10, -31)
-button_coord = Vector2i(1, -1)
+button_coord = Vector2i(1, 1)
 
 [node name="Door" parent="Objects" instance=ExtResource("3_mhf7i")]
 position = Vector2(10, -47)
-button_coord = Vector2i(1, -1)
+button_coord = Vector2i(1, 1)
 
 [node name="button_box" parent="Objects" instance=ExtResource("4_fddbh")]
 position = Vector2(-38, -31)
