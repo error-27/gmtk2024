@@ -30,6 +30,11 @@ func embiggen_level() -> void:
 			var scn = load(data.get_custom_data("Big Path")).instantiate()
 			add_child(scn)
 			scn.position = Vector2(t.x * 16 * 8, t.y * 16 * 8)
+			
+			if floor_map.get_cell_atlas_coords(t) == Vector2i(12, 18):
+				for o in objects.get_children():
+					if floor_map.local_to_map(o.global_position) == t:
+						scn.disable()
 	
 	for t in wall_map.get_used_cells():
 		var data = wall_map.get_cell_tile_data(t)
@@ -40,7 +45,7 @@ func embiggen_level() -> void:
 	
 	for o in objects.get_children():
 		var scn
-		if o is Box:
+		if o is Button_Box:
 			scn = load("res://scenes/big_tiles/objects/box.tscn").instantiate()
 		
 		add_child(scn)
