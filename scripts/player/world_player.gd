@@ -4,6 +4,7 @@ class_name World_Player
 @export var big_speed: int = 60
 @export var small_speed: int = 60
 @export var level_hop: bool = false # if to hop into mini levels, in case they don't get done, we can toggle it
+var debug_toggle: bool = false
 
 var floor_map: TileMapLayer
 
@@ -90,8 +91,25 @@ func _process(_delta: float) -> void:
 # get_tree().call_deferred("change_scene_to_file","scene path")
 
 # it's jank but it works, manual though
-func _on_level_1_area_entered(_area: Area2D) -> void:
-	get_tree().call_deferred("change_scene_to_file","res://scenes/level/shrunkle_level.tscn")
+func _on_debug_level_1_area_entered(_area: Area2D) -> void:
+	if debug_toggle == true:
+		get_tree().call_deferred("change_scene_to_file","res://scenes/level/shrunkle_level.tscn")
+	else:
+		pass
 
-func _on_level_2_area_entered(_area: Area2D) -> void:
-	get_tree().call_deferred("change_scene_to_file","res://scenes/level/testing/level-(test).tscn")
+func _on_debug_level_2_area_entered(_area: Area2D) -> void:
+	if debug_toggle == true:
+		get_tree().call_deferred("change_scene_to_file","res://scenes/level/testing/level-(test).tscn")
+	else:
+		pass
+
+
+func _on_debug_hidden() -> void:
+	if 1 == 1:
+		debug_toggle == false 
+	
+		
+
+
+func _on_home_level_area_entered(area: Area2D) -> void:
+	get_tree().call_deferred("change_scene_to_file","res://scenes/start_screen.tscn")
