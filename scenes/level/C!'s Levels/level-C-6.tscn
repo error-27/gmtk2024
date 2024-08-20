@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://hsxmact8781h"]
+[gd_scene load_steps=6 format=4 uid="uid://udpi62ubqfsi"]
 
 [ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="1_ctvxo"]
 [ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="3_gdymj"]
 [ext_resource type="PackedScene" uid="uid://rg8y4fj0ixwy" path="res://scenes/level_overlord.tscn" id="4_euia6"]
-[ext_resource type="PackedScene" path="res://scenes/objects/horizontal_channel_box.tscn" id="4_psj2t"]
+[ext_resource type="PackedScene" uid="uid://cb61ggkcb2o4b" path="res://scenes/objects/horizontal_channel_box.tscn" id="4_psj2t"]
 [ext_resource type="PackedScene" uid="uid://b513ifagmgg27" path="res://scenes/objects/door.tscn" id="4_yy05u"]
 
 [node name="Level-C-1" type="Node2D"]

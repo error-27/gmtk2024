@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://ornwgg3xp3e8"]
+[gd_scene load_steps=7 format=4 uid="uid://b06ape47nw2fn"]
 
 [ext_resource type="PackedScene" uid="uid://rg8y4fj0ixwy" path="res://scenes/level_overlord.tscn" id="1_uoctm"]
 [ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="2_vjsor"]
-[ext_resource type="PackedScene" path="res://scenes/objects/horizontal_channel_box.tscn" id="3_8463l"]
+[ext_resource type="PackedScene" uid="uid://cb61ggkcb2o4b" path="res://scenes/objects/horizontal_channel_box.tscn" id="3_8463l"]
 [ext_resource type="PackedScene" uid="uid://b513ifagmgg27" path="res://scenes/objects/door.tscn" id="4_vkhhu"]
 [ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="5_4v63n"]
-[ext_resource type="PackedScene" uid="uid://cfnh7umnbgfug" path="res://scenes/objects/vertical_channel_box.tscn" id="5_b3w2i"]
+[ext_resource type="PackedScene" uid="uid://bodqjb3up6u77" path="res://scenes/objects/vertical_channel_box.tscn" id="5_b3w2i"]
 
 [node name="Level-C-1" type="Node2D"]
 
