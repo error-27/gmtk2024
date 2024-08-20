@@ -19,4 +19,5 @@ tile_set = ExtResource("1_bnufc")
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_6top1")
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="area_entered" from="finish" to="." method="_on_finish_area_entered"]
