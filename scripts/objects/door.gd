@@ -21,4 +21,4 @@ func open_door(coord: Vector2i) -> void:
 
 
 func _on_visibility_changed() -> void:
-	$CollisionShape2D.disabled = not visible
+	$CollisionShape2D.set_deferred("disabled", not visible)

@@ -7,4 +7,4 @@ func _on_finish_area_entered(_area: Area2D) -> void:
 
 
 func _on_visibility_changed() -> void:
-	$finish/CollisionShape2D.disabled = not visible
+	$finish/CollisionShape2D.set_deferred("disabled", not visible)

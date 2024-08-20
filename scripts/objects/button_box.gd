@@ -82,9 +82,9 @@ func _on_bottom_area_body_exited(_body: Node2D) -> void:
 
 
 func _on_visibility_changed() -> void:
-	$CollisionShape2D.disabled = not visible
-	$right_area/right_box_shape.disabled = not visible
-	$left_area/left_box_shape.disabled = not visible
-	$top_area/top_box_shape.disabled = not visible
-	$"bottom area/bottom_box_shape".disabled = not visible
-	$button_press/CollisionShape2D.disabled = not visible
+	$CollisionShape2D.set_deferred("disabled", not visible)
+	$right_area/right_box_shape.set_deferred("disabled", not visible)
+	$left_area/left_box_shape.set_deferred("disabled", not visible)
+	$top_area/top_box_shape.set_deferred("disabled", not visible)
+	$"bottom area/bottom_box_shape".set_deferred("disabled", not visible)
+	$button_press/CollisionShape2D.set_deferred("disabled", not visible)

@@ -61,7 +61,7 @@ func embiggen_level() -> void:
 		
 		if not scn == null:
 			add_child(scn)
-			scn.position = o.position * 8
+			scn.position = o.global_position * 8
 
 func ensmallen_level() -> void:
 	for child in get_children():
