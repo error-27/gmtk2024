@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=4 uid="uid://hsxmact8781h"]
+
+[ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="1_ctvxo"]
+[ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="3_gdymj"]
+[ext_resource type="PackedScene" uid="uid://rg8y4fj0ixwy" path="res://scenes/level_overlord.tscn" id="4_euia6"]
+[ext_resource type="PackedScene" path="res://scenes/objects/horizontal_channel_box.tscn" id="4_psj2t"]
+[ext_resource type="PackedScene" uid="uid://b513ifagmgg27" path="res://scenes/objects/door.tscn" id="4_yy05u"]
+
+[node name="Level-C-1" type="Node2D"]
+
+[node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "wall_map", "objects", "player", "camera") instance=ExtResource("4_euia6")]
+floor_map = NodePath("../Floor")
+wall_map = NodePath("../Walls")
+objects = NodePath("../Objects")
+player = NodePath("../Player")
+camera = NodePath("../Camera2D")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8//7/AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAAAAP7/AAAAAAAAAAAAAAIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wAAAAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAACAAAAAAAMABIAAAABAAAAAAAMABIAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAAAAAAAAAAMABIAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAD8/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAAAAAMAAAAAAAAAAAD6/wMAAAAAAAAAAAD6/wQAAAAAAAAAAAD7/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wEAAAAAAAAAAAD6/wAAAAAAAAAAAAD6////AAAAAAAAAAD6//7/AAAAAAAAAAD6//3/AAAAAAAAAAD8//3/AAAAAAAAAAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAAAAP3/AAAAAAAAAAD5/wQAAAAAAAAAAAD5/wMAAAAAAAAAAAD5/wIAAAAAAAAAAAD5/wEAAAAAAAAAAAD5/wAAAAAAAAAAAAD5////AAAAAAAAAAD5//7/AAAAAAAAAAD5//3/AAAAAAAAAAD5//z/AAAAAAAAAAD6//z/AAAAAAAAAAD7//z/AAAAAAAAAAD8//z/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAAAAAD///3/AAAAAAAAAAD///7/AAAAAAAAAAD/////AAAvABAAAAD//wEAAAAuABAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAP//AAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAbABQAAQA=")
+tile_set = ExtResource("1_ctvxo")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD6//z/AAARABIAAAD7//z/AAARABIAAAD8//z/AAARABIAAAD9//z/AAARABIAAAD+//z/AAARABIAAAD///z/AAARABIAAAD5//3/AAASABEAAAD5//7/AAASABEAAAD5////AAASABEAAAD5/wAAAAASABEAAAD5/wEAAAASABEAAAD5/wIAAAASABEAAAD5/wMAAAASABEAAAD6/wQAAAARABAAAAD7/wQAAAARABAAAAD8/wQAAAARABAAAAD9/wQAAAARABAAAAD+/wQAAAARABAAAAD//wQAAAARABAAAAD5//z/AAAwAA0AAAD5/wQAAAAwAA0AAAAAAAQAAAAwAA4AAAAAAAIAAAAQABEAAAAAAP//AAAwAA4AAAAAAPz/AAAwAA4AAAAAAP3/AAAQABEAAAAAAP7/AAAQABEAAAAAAAMAAAAQABEAAAAAAAEAAAAwAA4AAAABAAEAAAARABAAAAACAAEAAAARABAAAAABAP//AAARABIAAAACAP//AAARABIAAAADAP//AAARABIAAAAEAP//AAARABIAAAADAAEAAAARABAAAAAEAAEAAAARABAAAAAFAP//AAAwAA0AAAAFAAEAAAAwAA0AAAAFAAAAAAAQABEAAAA=")
+tile_set = ExtResource("1_ctvxo")
+
+[node name="Objects" type="Node2D" parent="."]
+position = Vector2(62, 23)
+
+[node name="horizontal_channel_box" parent="Objects" instance=ExtResource("4_psj2t")]
+position = Vector2(-118, 17)
+
+[node name="horizontal_channel_box2" parent="Objects" instance=ExtResource("4_psj2t")]
+position = Vector2(-118, -47)
+
+[node name="horizontal_channel_box3" parent="Objects" instance=ExtResource("4_psj2t")]
+position = Vector2(-134, -15)
+
+[node name="Door" parent="Objects" instance=ExtResource("4_yy05u")]
+position = Vector2(-6, -15)
+
+[node name="Player" parent="." instance=ExtResource("3_gdymj")]
+position = Vector2(-40, 8)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-40, 8)

@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=4 uid="uid://ornwgg3xp3e8"]
+
+[ext_resource type="PackedScene" uid="uid://rg8y4fj0ixwy" path="res://scenes/level_overlord.tscn" id="1_uoctm"]
+[ext_resource type="TileSet" uid="uid://cphfuyjc342e" path="res://assets/tileset.tres" id="2_vjsor"]
+[ext_resource type="PackedScene" path="res://scenes/objects/horizontal_channel_box.tscn" id="3_8463l"]
+[ext_resource type="PackedScene" uid="uid://b513ifagmgg27" path="res://scenes/objects/door.tscn" id="4_vkhhu"]
+[ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="5_4v63n"]
+[ext_resource type="PackedScene" uid="uid://cfnh7umnbgfug" path="res://scenes/objects/vertical_channel_box.tscn" id="5_b3w2i"]
+
+[node name="Level-C-1" type="Node2D"]
+
+[node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "wall_map", "objects", "player", "camera") instance=ExtResource("1_uoctm")]
+floor_map = NodePath("../Floor")
+wall_map = NodePath("../Walls")
+objects = NodePath("../Objects")
+player = NodePath("../Player")
+camera = NodePath("../Camera2D")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD6//3/AAAAAAAAAAD7//3/AAAAAAAAAAD9////AAAAAAAAAAD+////AAAMABIAAAD+/wAAAAAMABIAAAD//wAAAAAMABIAAAD+//7/AAAMABIAAAD+/wEAAAAMABIAAAD//wEAAAAMABIAAAAAAAEAAAAAAAAAAAABAAEAAAAMABIAAAACAAEAAAAAAAAAAAACAAAAAAAMABIAAAACAP//AAAAAAAAAAACAP7/AAAMABIAAAABAP7/AAAMABIAAAAAAP7/AAAAAAAAAAD///7/AAAMABIAAAD/////AAAMABIAAAAAAP//AAAMABIAAAAAAAAAAAAMABIAAAABAAAAAAAMABIAAAABAP//AAAMABIAAAADAP7/AAAMABIAAAADAP//AAAMABIAAAADAAAAAAAMABIAAAADAAEAAAAMABIAAAD+//3/AAAMABIAAAD///3/AAAMABIAAAAAAP3/AAAMABIAAAABAP3/AAAMABIAAAACAP3/AAAMABIAAAADAP3/AAAMABIAAAD3//z/AAAAAAAAAAD4//z/AAAAAAAAAAD5//z/AAAAAAAAAAD6//z/AAAAAAAAAAD7//z/AAAAAAAAAAD8//z/AAAAAAAAAAD9//z/AAAvABAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAuABAAAAD8/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD4/wIAAAAAAAAAAAD3/wIAAAAAAAAAAAD3/wEAAAAAAAAAAAD3/wAAAAAAAAAAAAD3////AAAAAAAAAAD3//7/AAAAAAAAAAD3//3/AAAAAAAAAAD4//3/AAAAAAAAAAD4//7/AAAAAAAAAAD4////AAAAAAAAAAD4/wAAAAAAAAAAAAD4/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD5/wAAAAAAAAAAAAD5////AAAAAAAAAAD5//7/AAAAAAAAAAD5//3/AAAAAAAAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wAAAAAAAAAAAAD7////AAAAAAAAAAD7//7/AAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAAFAP3/AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAP//AAAbABQAAQAGAP7/AAAAAAAAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAP3/AAAAAAAAAAD2//z/AAAAAAAAAAD2//3/AAAAAAAAAAD2//7/AAAAAAAAAAD2////AAAAAAAAAAD2/wAAAAAAAAAAAAD2/wEAAAAAAAAAAAD2/wIAAAAAAAAAAAA=")
+tile_set = ExtResource("2_vjsor")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD4//v/AAARABIAAAD5//v/AAARABIAAAD6//v/AAARABIAAAD7//v/AAARABIAAAD8//v/AAARABIAAAD9//v/AAARABIAAAD+//z/AAAwAA0AAAD///z/AAARABIAAAAAAPz/AAARABIAAAABAPz/AAARABIAAAACAPz/AAARABIAAAADAPz/AAARABIAAAD+/wIAAAAwAA0AAAD//wIAAAARABAAAAAAAAIAAAARABAAAAABAAIAAAARABAAAAACAAIAAAARABAAAAADAAIAAAARABAAAAD3//v/AAARABIAAAD9/wMAAAARABAAAAD8/wMAAAARABAAAAD7/wMAAAARABAAAAD6/wMAAAARABAAAAD5/wMAAAARABAAAAD4/wMAAAARABAAAAD3/wMAAAARABAAAAD+/wMAAAAwAA0AAAD+//v/AAAwAA0AAAAEAPz/AAARABIAAAAEAAIAAAARABAAAAAFAPz/AAARABIAAAAFAAIAAAARABAAAAAHAP3/AAAQABEAAAAHAP7/AAAQABEAAAAHAP//AAAQABEAAAAHAAAAAAAQABEAAAAHAAEAAAAQABEAAAAGAPz/AAARABIAAAAGAAIAAAARABAAAAAHAAIAAAAwAA0AAAAHAPz/AAAwAA0AAAD2//v/AAARABIAAAD2/wMAAAARABAAAAD1//z/AAASABEAAAD1//3/AAASABEAAAD1//7/AAASABEAAAD1////AAASABEAAAD1/wAAAAASABEAAAD1/wEAAAASABEAAAD1/wIAAAASABEAAAD1/wMAAAAwAA0AAAD1//v/AAAwAA0AAAA=")
+tile_set = ExtResource("2_vjsor")
+
+[node name="Objects" type="Node2D" parent="."]
+position = Vector2(62, 23)
+
+[node name="horizontal_channel_box" parent="Objects" instance=ExtResource("3_8463l")]
+position = Vector2(-134, -31)
+
+[node name="horizontal_channel_box2" parent="Objects" instance=ExtResource("3_8463l")]
+position = Vector2(-134, -63)
+
+[node name="horizontal_channel_box3" parent="Objects" instance=ExtResource("3_8463l")]
+position = Vector2(-134, 1)
+
+[node name="horizontal_channel_box4" parent="Objects" instance=ExtResource("3_8463l")]
+position = Vector2(-166, 1)
+
+[node name="vertical_channel_box" parent="Objects" instance=ExtResource("5_b3w2i")]
+position = Vector2(-166, -63)
+
+[node name="vertical_channel_box4" parent="Objects" instance=ExtResource("5_b3w2i")]
+position = Vector2(-198, 1)
+
+[node name="vertical_channel_box3" parent="Objects" instance=ExtResource("5_b3w2i")]
+position = Vector2(-198, -31)
+
+[node name="vertical_channel_box2" parent="Objects" instance=ExtResource("5_b3w2i")]
+position = Vector2(-198, -63)
+
+[node name="Door" parent="Objects" instance=ExtResource("4_vkhhu")]
+position = Vector2(10, -47)
+
+[node name="Door2" parent="Objects" instance=ExtResource("4_vkhhu")]
+position = Vector2(10, 1)
+
+[node name="Door3" parent="Objects" instance=ExtResource("4_vkhhu")]
+position = Vector2(10, -15)
+
+[node name="Door4" parent="Objects" instance=ExtResource("4_vkhhu")]
+position = Vector2(10, -31)
+
+[node name="Door5" parent="Objects" instance=ExtResource("4_vkhhu")]
+position = Vector2(10, -63)
+
+[node name="Player" parent="." instance=ExtResource("5_4v63n")]
+position = Vector2(-104, -8)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(376, -144)
