@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 	var box_floor: TileMapLayer = get_node("../../LevelOverlord").floor_map
 	if box_floor.get_cell_atlas_coords(box_floor.local_to_map(global_position)) == Vector2i(46, 2):
 		button_press.emit(box_floor.local_to_map(global_position))
+		
 
 func _on_button_press_area_entered(area: Area2D) -> void:
 	if area.name == "Button_Area":

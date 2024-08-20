@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @export var button_coord: Vector2i
 @onready var objects = $".."
+@onready var door_tile : Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	for child in objects.get_children():
@@ -11,3 +12,4 @@ func _ready() -> void:
 func open_door(coord: Vector2i) -> void:
 	if coord == button_coord:
 		$CollisionShape2D.disabled = true
+		door_tile.hide()

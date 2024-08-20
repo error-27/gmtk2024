@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://da4afoc7hsjjf" path="res://scenes/level/finish_point.tscn" id="3_hfvau"]
 [ext_resource type="PackedScene" uid="uid://csodanqj1dkbn" path="res://scenes/player/player.tscn" id="4_3vui5"]
 
-[node name="Level-(test)" type="Node2D"]
+[node name="Level-C-1" type="Node2D"]
 
 [node name="LevelOverlord" parent="." node_paths=PackedStringArray("floor_map", "wall_map", "objects", "player", "camera") instance=ExtResource("1_vvmh8")]
 floor_map = NodePath("Floor")
