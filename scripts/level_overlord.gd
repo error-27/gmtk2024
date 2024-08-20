@@ -15,6 +15,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	camera.position = player.position
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
 
 func embiggen_level() -> void:
 	floor_map.enabled = false
