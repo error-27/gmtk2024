@@ -25,8 +25,6 @@ func _ready():
 	
 	$CreditsPanel/CreditsLabel.text = copyright_text
 	
-	get_window().size = get_window().size * 3
-	
 	#play Background Music (AudioStream)
 	#current song: none
 	#$BackgroundMusic.play()
